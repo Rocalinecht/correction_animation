@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap');
+
+body{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Zilla Slab', serif;
+    font-size: 2em;
+    background: #efefef;
+    letter-spacing: -1px;
+}
+
+quote::before{
+    content:'\201C';
+}
+quote::after{
+    content: '\201D';
+}
+ins{
+    color: rgba(132,175, 155,.75);
+    cursor: help;
+    position: relative;
+}
+
+ins::before{
+    content: '(correction)';
+    display: block;
+    pointer-events: none;
+    position: absolute;
+    color: #659b82;
+    top: -2em;
+    left: 0;
+    font-size: .5em;
+    opacity: 0;
+    transition: .5s ease;
+}
+ins:hover del {
+    max-width: 9em;
+}
+
+ins:hover::before{
+    opacity: 1;
+    top :-1.2em;
+}
+ins del{
+    color: rgba(255, 107, 107, .75 );
+    display: inline-block;
+    overflow: hidden;
+    max-width: 0;
+    vertical-align: bottom;
+    transition: .5s ease;
+}
+ins del ::before{
+    content:'\00a0';
+    visibility: hidden;
+}
